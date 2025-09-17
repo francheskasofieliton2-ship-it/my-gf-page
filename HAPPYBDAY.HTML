@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday, My Love 💜</title>
+  <link rel="stylesheet" href="SOFIE.CSS">
+  <style>
+   .birthday-header {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 3em;
+  text-align: center;
+  margin: 30px 0;
+  color: #d291bc;
+  text-shadow: 2px 2px 5px #800080;
+}
+<style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('KUROMII.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    nav {
+      background-color: rgba(128, 0, 128, 0.8);
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 30px;
+    }
+
+    .photo {
+      margin: 10px;
+      position: relative;
+    }
+
+    .photo img {
+      width: 200px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .photo img:hover {
+      transform: scale(1.05);
+    }
+
+    .message {
+      display: none;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0,0,0,0.6);
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .music-section {
+      text-align: center;
+      margin: 50px auto;
+      color: #800080;
+    }
+
+    .song-title {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 3px #d291bc;
+    }
+
+    .music-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .album-cover {
+      width: 200px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #d291bc;
+    }
+
+    .cd-gif {
+      width: 100px;
+      animation: spin 4s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    #floatingMessage {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(128, 0, 128, 0.85);
+      color: white;
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-size: 1em;
+      font-family: 'Segoe UI', sans-serif;
+      box-shadow: 0 0 10px #6a006a;
+      z-index: 999;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .heart-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 998;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -50px;
+      width: 20px;
+      height: 20px;
+      background: #d291bc;
+      transform: rotate(45deg);
+      animation: floatUp 5s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #d291bc;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(45deg); opacity: 0; }
+    }
+
+    .message-frame {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 40px auto;
+      flex-wrap: wrap;
+      background: rgba(128, 0, 128, 0.1);
+      border-radius: 20px;
+      padding: 20px;
+      max-width: 900px;
+    }
+
+    .kuromi-gif {
+      width: 200px;
+      border-radius: 15px;
+      margin: 10px;
+    }
+
+    .message-box {
+      background: rgba(255, 255, 255, 0.9);
+      color: #6a006a;
+      padding: 20px;
+      border-radius: 15px;
+      font-family: 'Segoe UI', sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 10px #d291bc;
+    }
+
+    .message-box h2 {
+      margin-top: 0;
+      font-size: 1.5em;
+      color: #800080;
+    }
+
+    .gif-section {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .gif-section img {
+      width: 150px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="birthday-header">
+  Happy 16th Birthday, My Love 💜
+</header>
+
+  <!-- Floating Hearts -->
+  <div class="heart-container"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#photos">Photos</a>
+    <a href="#music">Music</a>
+    <a href="#gifs">GIFs</a>
+  </nav>
+
+  <!-- Photo Gallery -->
+  <section id="photos" class="gallery">
+  <div class="photo" onclick="toggleMessage(this)">
+    <img src="1STMONTHSARY.jpg" alt="Her smile">
+    <div class="message"> Your smile is the sunrise that brightens my every day. I fell in love with your light the moment I saw it. 💫</div>
+  </div>
+
+  <div class="photo" onclick="toggleMessage(this)">
+    <img src="1STBOUQUET.jpg" alt="Her laugh">
+    <div class="message"> Your laugh is my favorite melody—pure, warm, and unforgettable. I’d replay it forever if I could. 🎶
+    </div>
+  </div></div>
+  </div>
+
+  <div class="photo" onclick="toggleMessage(this)">
+    <img src="MDATE.JPG" alt="Favorite moment">
+    <div class="message"> This moment with you is etched in my heart like a love letter. I’ll cherish it for all the birthdays and monthsaries to come. 💖</div>
+  </div>
+</section>
+
+
+  <!-- Music Section -->
+  <section id="music" class="music-section">
+    <h2 class="song-title">🎵 “Sanctuary” – Our Song 💜</h2>
+    <div class="music-box">
+      <img src="PHOTOGKO.jpg" alt="Album Cover" class="album-cover">
+      <audio id="birthdaySong" controls>
+        <source src="sunctuary.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <img src="cd.webp" alt="Spinning CD" class="cd-gif">
+    </div>
+    <div id="floatingMessage">
+      <p>“This song reminds me of you, every beat, every word 💜. NOT EVERYOUNE YOUR THE ONE MY SUNCTUARY”</p>
+    </div>
+  </section>
+
+  <!-- Birthday Message -->
+  <section class="message-frame">
+    <img src="kuromi-sanrio.gif" alt="Kuromi Birthday" class="kuromi-gif">
+    <div class="message-box">
+      <h2>Happy 16th Birthday, My Love 💜</h2>
+      <p>
+        Today marks a beautiful milestone in your life, and I’m so proud of the amazing person you’re becoming. 
+        You shine with kindness, creativity, and strength and being by your side is the greatest gift I’ve ever received. 
+        May this year bring you laughter that echoes, dreams that soar, and love that never fades. 
+        You deserve every sparkle in the universe, and I’ll be here to remind you of that every single day. 💫
+      </p>
+    </div>
+  </section>
+
+  <!-- Monthsary Message -->
+  <section class="message-frame">
+    <img src="cute.gif" alt="Kuromi Monthsary" class="kuromi-gif">
+    <div class="message-box">
+      <h2>Happy 9th Monthsary 💘</h2>
+      <p>
+        Nine months of laughter, growth, and unforgettable memories and I still get butterflies every time I think of you. 
+        You’ve filled my life with warmth, adventure, and a kind of love I never knew existed. 
+        Thank you for being my safe space, my joy, and my forever favorite person. 
+        Here’s to many more months, years, and lifetimes of love, cuddles, and Kuromi-level cuteness with you. 💖
+      </p>
+    </div>
+  </section>
+
+  <!-- Kuromi GIF Section -->
+  <section id="gifs" class="gif-section">
+    <img src="cute.gif" alt="Kuromi GIF 1">
+    <img src="kuromi-sanrio.gif" alt="Kuromi GIF 2">
+    <!-- Add more GIFs if you like -->
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle photo messages
+    function toggleMessage(photoDiv) {
+      const msg = photoDiv.querySelector('.message');
+      msg.style.display = msg.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Floating message on song play
+    const song = document.getElementById('birthdaySong');
+    const message = document.getElementById('floatingMessage');
+
+    song.addEventListener('play', () => {
+      message.style.display = 'block';
+      message.style.animation = 'fadeIn 2s ease-in-out';
+    });
+
+    song.addEventListener('pause', () => {
+      message.style.display = 'none';
+    });
+
+    song.addEventListener('ended', () => {
+      message.style.display = 'none';
+    });
+
+    // Floating hearts
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      document.querySelector('.heart-container').appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    window.addEventListener('load', () => {
+      setInterval(createHeart, 500);
+    });
+  </script>
+
+</body>
+</html>
